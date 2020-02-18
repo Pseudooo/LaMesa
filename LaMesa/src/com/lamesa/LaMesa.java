@@ -4,6 +4,8 @@ public class LaMesa {
 
 	public static void main(String[] args) {
 		// ...
+		//TODO setup UI
 	}
+	
 	
 }

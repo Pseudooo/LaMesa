@@ -3,7 +3,6 @@ package com.lamesa;
 public class LaMesa {
 
 	public static void main(String[] args) {
-<<<<<<< Upstream, based on origin/methmal
 		
 		if(args.length < 2) {
 			System.err.println("Grr....");
@@ -19,13 +18,6 @@ public class LaMesa {
 			e.printStackTrace();
 		}
 		
-=======
-		// ...
-		//TODO setup UI
->>>>>>> e7162a1 merge
 	}
-	
-	
-	
 	
 }

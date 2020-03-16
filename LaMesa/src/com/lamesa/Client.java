@@ -10,13 +10,15 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
+import com.lamesa.net.NetHandler;
+import com.lamesa.net.ReqType;
 import com.lamesa.net.exceptions.HandshakeFailedException;
 import com.lamesa.util.TextFormat;
 
 public class Client {
 	
 	public final static int KEY_SIZE = 32;
-
+	
 	// Address+port of server
 	private final String host;
 	private final int port;
@@ -24,6 +26,8 @@ public class Client {
 	private Socket socket;
 	private InputStream is;
 	private OutputStream os;
+	
+	private final NetHandler nh;
 	
 	private byte[] key;
 	
@@ -47,6 +51,12 @@ public class Client {
 		}catch(HandshakeFailedException e) {
 			throw e;
 		}
+		
+		this.nh = new NetHandler(this.socket);
+		
+		System.out.println("Dispatching");
+		
+		this.nh.dispatchRequest(ReqType.NAME, null);
 		
 	}
 	

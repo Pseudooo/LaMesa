@@ -1,6 +1,6 @@
 package com.lamesa.ui;
 
-import javax.swing.JFrame;
+
 
 public class homewindow extends javax.swing.JFrame {
 
@@ -143,6 +143,9 @@ public class homewindow extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void myprofileButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
+      this.dispose();
+      myprofilewindow newMyprofilewindow = new myprofilewindow();
+      newMyprofilewindow.setVisible(true);
       
        
             

@@ -11,7 +11,7 @@ import java.security.SecureRandom;
 import java.util.Arrays;
 
 import com.lamesa.net.NetHandler;
-import com.lamesa.net.ReqType;
+import com.lamesa.net.ReadThread;
 import com.lamesa.net.exceptions.HandshakeFailedException;
 import com.lamesa.util.TextFormat;
 
@@ -28,6 +28,8 @@ public class Client {
 	private OutputStream os;
 	
 	private final NetHandler nh;
+	
+	private final ReadThread rt;
 	
 	private byte[] key;
 	
@@ -54,9 +56,8 @@ public class Client {
 		
 		this.nh = new NetHandler(this.socket);
 		
-		System.out.println("Dispatching");
-		
-		this.nh.dispatchRequest(ReqType.NAME, null);
+		this.rt = new ReadThread(this, this.socket);
+		this.rt.start();
 		
 	}
 	

@@ -9,12 +9,9 @@ import java.util.UUID;
 
 public class NetHandler {
 	
-	private final HashMap<UUID, Request> requests;
-	
 	private final Socket s;
 	
 	public NetHandler(Socket s) throws IOException {
-		this.requests = new HashMap<UUID, Request>();
 		this.s = s;
 	}
 	
@@ -25,23 +22,21 @@ public class NetHandler {
 	 * @throws IOException 
 	 * @return
 	 */
-	public void dispatchRequest(ReqType req, Runnable res) throws IOException {
+	public void dispatchRequest(Object payload, Response res) throws IOException {
 		
-		// TODO Fetch appropriate data from db
-		
-		// Temporary obj to fill in for tests
-		Request r = new Request(req, new String("This is a test"));
+		DataGram dg = new DataGram(payload);
 		
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		ObjectOutputStream oos = new ObjectOutputStream(baos);
 		
-		oos.writeObject(r);
+		oos.writeObject(dg);
 		oos.flush();
 		
 		// Byte array to be sent
 		byte[] data = baos.toByteArray();
 		
-		// TODO send length of data
+		this.s.getOutputStream().write(data.length);
+		this.s.getOutputStream().write(data);
 		
 	}
 	

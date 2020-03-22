@@ -12,6 +12,7 @@ import java.util.Arrays;
 
 import com.lamesa.net.NetHandler;
 import com.lamesa.net.ReadThread;
+import com.lamesa.net.Response;
 import com.lamesa.net.exceptions.HandshakeFailedException;
 import com.lamesa.util.TextFormat;
 

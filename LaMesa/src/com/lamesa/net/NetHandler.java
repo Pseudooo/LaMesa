@@ -7,6 +7,8 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.UUID;
 
+import com.lamesa.util.TextFormat;
+
 public class NetHandler {
 	
 	private final Socket s;
@@ -37,9 +39,13 @@ public class NetHandler {
 		// Byte array to be sent
 		byte[] data = baos.toByteArray();
 		
+		TextFormat.foutput("Dispatching DataGram :: %s", dg.ID());
+		
+		// Write the length and data to stream
 		this.s.getOutputStream().write(data.length);
 		this.s.getOutputStream().write(data);
 		
+		// Register a response to be run when server responds
 		this.rt.registerResponse(dg.ID(), res);
 		
 	}

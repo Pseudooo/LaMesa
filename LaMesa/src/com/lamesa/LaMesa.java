@@ -17,7 +17,6 @@ public class LaMesa {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	
 		
 	}
 	

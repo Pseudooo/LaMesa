@@ -10,13 +10,14 @@ import java.util.HashMap;
 import java.util.UUID;
 
 import com.lamesa.Client;
+import com.lamesa.util.TextFormat;
 
 public class ReadThread extends Thread{
 
 	private final Client client;
 	private final Socket socket;
 	
-	private final HashMap<UUID, Response> responses = new HashMap<UUID, Response>();
+	private volatile HashMap<UUID, Response> responses = new HashMap<UUID, Response>();
 	
 	public ReadThread(Client client, Socket socket) throws IOException {
 		this.client = client;
@@ -26,6 +27,7 @@ public class ReadThread extends Thread{
 	
 	public void registerResponse(UUID id, Response res) {
 		this.responses.put(id, res);
+		TextFormat.foutput("Registered Response for %s", id.toString());
 	}
 	
 	@Override
@@ -47,10 +49,13 @@ public class ReadThread extends Thread{
 				DataGram dg = (DataGram) ois.readObject();
 				Response res = this.responses.remove(dg.ID());
 				
+				TextFormat.foutput("Received Response :: %s", dg.ID().toString());
+				
 				res.takePayload(dg.getPayload());
 				res.run();
 				
 			}catch(Exception e) {
+				e.printStackTrace();
 				run = false;
 			}
 			

@@ -54,10 +54,10 @@ public class Client {
 			throw e;
 		}
 		
-		this.nh = new NetHandler(this.socket);
-		
 		this.rt = new ReadThread(this, this.socket);
 		this.rt.start();
+		
+		this.nh = new NetHandler(this.socket, this.rt);
 		
 	}
 	

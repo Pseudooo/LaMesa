@@ -10,9 +10,11 @@ import java.util.UUID;
 public class NetHandler {
 	
 	private final Socket s;
+	private final ReadThread rt;
 	
-	public NetHandler(Socket s) throws IOException {
+	public NetHandler(Socket s, ReadThread rt) throws IOException {
 		this.s = s;
+		this.rt = rt;
 	}
 	
 	/**
@@ -37,6 +39,8 @@ public class NetHandler {
 		
 		this.s.getOutputStream().write(data.length);
 		this.s.getOutputStream().write(data);
+		
+		this.rt.registerResponse(dg.ID(), res);
 		
 	}
 	

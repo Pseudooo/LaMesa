@@ -1,8 +1,10 @@
 package com.lamesa.net;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.UUID;
@@ -35,11 +37,18 @@ public class ReadThread extends Thread{
 			try {
 				
 				int x = this.socket.getInputStream().read();
-				byte[] buffer = new byte[x];
 				
-				this.socket.getInputStream().read(buffer);
+				byte[] data = new byte[x];
+				this.socket.getInputStream().read(data);
 				
-				System.out.printf("Read %d bytes%n", x);
+				ByteArrayInputStream bais = new ByteArrayInputStream(data);
+				ObjectInputStream ois = new ObjectInputStream(bais);
+				
+				DataGram dg = (DataGram) ois.readObject();
+				Response res = this.responses.remove(dg.ID());
+				
+				res.takePayload(dg.getPayload());
+				res.run();
 				
 			}catch(Exception e) {
 				run = false;

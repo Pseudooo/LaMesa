@@ -21,7 +21,7 @@ public class homewindow extends javax.swing.JFrame {
     private void initComponents() {
 
         navigationButtonContainer = new javax.swing.JPanel();
-        restaurantButton = new javax.swing.JButton();
+        homewindowButton = new javax.swing.JButton();
         myprofileButton = new javax.swing.JButton();
         searchContainer = new javax.swing.JPanel();
         searchLable = new javax.swing.JLabel();
@@ -33,8 +33,8 @@ public class homewindow extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(400, 500));
         setResizable(false);
 
-        restaurantButton.setText("RESTAURANTS");
-        restaurantButton.addActionListener(new java.awt.event.ActionListener() {
+        homewindowButton.setText("RESTAURANTS");
+        homewindowButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 restaurantButtonActionPerformed(evt);
             }
@@ -77,7 +77,7 @@ public class homewindow extends javax.swing.JFrame {
             .addComponent(searchContainer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, navigationButtonContainerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(restaurantButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(homewindowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(myprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -88,7 +88,7 @@ public class homewindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(navigationButtonContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(myprofileButton)
-                    .addComponent(restaurantButton))
+                    .addComponent(homewindowButton))
                 .addGap(18, 18, 18)
                 .addComponent(searchContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -156,7 +156,10 @@ public class homewindow extends javax.swing.JFrame {
     }                                                
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-            
+    	  this.dispose();
+          restaurantwindow newRestaurantwindow = new restaurantwindow();
+          newRestaurantwindow.setVisible(true);
+          
         
     }                                        
 
@@ -203,7 +206,7 @@ public class homewindow extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton myprofileButton;
     private javax.swing.JPanel navigationButtonContainer;
-    private javax.swing.JButton restaurantButton;
+    private javax.swing.JButton homewindowButton;
     private javax.swing.JPanel restaurantButtonContainer;
     private javax.swing.JPanel searchContainer;
     private javax.swing.JLabel searchLable;

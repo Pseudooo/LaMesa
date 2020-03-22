@@ -24,7 +24,7 @@ public class NetHandler {
 	 * @throws IOException 
 	 * @return
 	 */
-	public void dispatchRequest(Object payload, Response res) throws IOException {
+	public void dispatch(Object payload, Response res) throws IOException {
 		
 		DataGram dg = new DataGram(payload);
 		

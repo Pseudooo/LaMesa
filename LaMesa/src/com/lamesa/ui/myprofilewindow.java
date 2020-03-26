@@ -1,11 +1,11 @@
 package com.lamesa.ui;
 
-
-
-
+import com.lamesa.Client;
 
 public class myprofilewindow extends javax.swing.JFrame {
-
+	
+	public static Client c;
+	
     /**
      * Creates new form profile
      */
@@ -21,11 +21,11 @@ public class myprofilewindow extends javax.swing.JFrame {
 
     
         jLabelEmail = new javax.swing.JLabel();
-        jTextField_phone = new javax.swing.JTextField();
+        jTextField_phone = new javax.swing.JTextField(c.phone);
         jLablePhone = new javax.swing.JLabel();
-        jTextField_email = new javax.swing.JTextField();
+        jTextField_email = new javax.swing.JTextField(c.email);
         lablelName = new javax.swing.JLabel();
-        jTextField_name = new javax.swing.JTextField();
+        jTextField_name = new javax.swing.JTextField(c.name);
         jPanel1 = new javax.swing.JPanel();
         homewindowButton = new javax.swing.JButton();
         myProflieButton = new javax.swing.JButton();
@@ -156,49 +156,14 @@ public class myprofilewindow extends javax.swing.JFrame {
         this.dispose();
         homewindow newhomeWindow = new  homewindow();
         newhomeWindow.setVisible(true);
-       
-       
-        
-
-    
     }                                                
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-  
+    	
+    	c.name = jTextField_name.getText();
+    	c.phone = jTextField_phone.getText();
+    	c.email = jTextField_email.getText();
        
-    }                                            
-
-    
-
-
-public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(myprofilewindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(myprofilewindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(myprofilewindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(myprofilewindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-    
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new myprofilewindow().setVisible(true);
-            }
-        });
-         
     }
 
     // Variables declaration                  

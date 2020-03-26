@@ -20,6 +20,8 @@ import com.lamesa.util.TextFormat;
 
 public class Client {
 	
+	public static NetHandler nh;
+	
 	public String name = "", phone = "", email = "";
 	
 	public final static int KEY_SIZE = 32;
@@ -31,8 +33,6 @@ public class Client {
 	private Socket socket;
 	private InputStream is;
 	private OutputStream os;
-	
-	private final NetHandler nh;
 	
 	private final ReadThread rt;
 	
@@ -64,7 +64,7 @@ public class Client {
 		this.rt = new ReadThread(this, this.socket);
 		this.rt.start();
 		
-		this.nh = new NetHandler(this.socket, this.rt);
+		nh = new NetHandler(this.socket, this.rt);
 		
 	}
 	

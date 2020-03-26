@@ -1,6 +1,10 @@
 package com.lamesa.ui;
 
+import java.io.IOException;
 
+import com.lamesa.Client;
+import com.lamesa.net.Response;
+import com.lamesa.util.TextFormat;
 
 public class restaurantwindow2 extends javax.swing.JFrame {
 
@@ -122,7 +126,25 @@ public class restaurantwindow2 extends javax.swing.JFrame {
     }                      
 
     private void jButtonBookActionPerformed(java.awt.event.ActionEvent evt) {                                            
-   
+    	try {
+			Client.nh.dispatch(new String("booking-TACOS"), new Response() {
+				
+				private String payload;
+				
+				@Override
+				public void takePayload(Object obj) {
+					this.payload = (String) obj;
+				}
+
+				@Override
+				public void run() {
+					TextFormat.output(this.payload);
+				}
+			});
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }                                           
 
     private void myprofileButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                

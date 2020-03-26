@@ -12,7 +12,7 @@ package com.lamesa.ui;
 
 
 public class homewindow extends javax.swing.JFrame {
-
+	
     /**
      * Creates new form homewindow
      */

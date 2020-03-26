@@ -14,9 +14,13 @@ import com.lamesa.net.NetHandler;
 import com.lamesa.net.ReadThread;
 import com.lamesa.net.Response;
 import com.lamesa.net.exceptions.HandshakeFailedException;
+import com.lamesa.ui.homewindow;
+import com.lamesa.ui.myprofilewindow;
 import com.lamesa.util.TextFormat;
 
 public class Client {
+	
+	public String name = "", phone = "", email = "";
 	
 	public final static int KEY_SIZE = 32;
 	
@@ -35,6 +39,8 @@ public class Client {
 	private byte[] key;
 	
 	public Client(String host, int port) throws Exception {
+		
+		myprofilewindow.c = this;
 		
 		this.host = host;
 		this.port = port;

@@ -1,26 +1,16 @@
 package com.lamesa.ui;
 
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-
-
 public class homewindow extends javax.swing.JFrame {
+
+	private static final long serialVersionUID = 3293682142470590958L;
 	
-    /**
+	/**
      * Creates new form homewindow
      */
     public homewindow() {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
@@ -31,25 +21,28 @@ public class homewindow extends javax.swing.JFrame {
         searchLable = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         restaurantButtonContainer = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        tacoButton = new javax.swing.JButton();
+        pizzaButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(400, 500));
-        setPreferredSize(new java.awt.Dimension(400, 500));
+        setMinimumSize(new java.awt.Dimension(400, 500));
         setResizable(false);
         setSize(new java.awt.Dimension(400, 500));
-
+        // sets text of the homewindowButton
         homewindowButton.setText("RESTAURANTS");
         homewindowButton.setMaximumSize(new java.awt.Dimension(95, 32));
         homewindowButton.setMinimumSize(new java.awt.Dimension(95, 32));
         homewindowButton.setPreferredSize(new java.awt.Dimension(95, 32));
+        //checks for button press of the homewindowButton
         homewindowButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 restaurantButtonActionPerformed(evt);
             }
         });
-
+        //sets the text of the myprofilewindow
         myprofileButton.setText("MYPROFILE");
+        //checks for press of the myprofileButton
         myprofileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myprofileButtonActionPerformed(evt);
@@ -76,7 +69,7 @@ public class homewindow extends javax.swing.JFrame {
                 .addGroup(searchContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchLable)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout navigationButtonContainerLayout = new javax.swing.GroupLayout(navigationButtonContainer);
@@ -87,7 +80,7 @@ public class homewindow extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, navigationButtonContainerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(homewindowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(myprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -98,17 +91,28 @@ public class homewindow extends javax.swing.JFrame {
                 .addGroup(navigationButtonContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(myprofileButton)
                     .addComponent(homewindowButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(searchContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         restaurantButtonContainer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jButton1.setText("PIZZA ");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        tacoButton.setText("TACOS ");
+        tacoButton.setMaximumSize(new java.awt.Dimension(70, 32));
+        tacoButton.setMinimumSize(new java.awt.Dimension(70, 32));
+        tacoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                tacoButtonActionPerformed(evt);
+            }
+        });
+
+        pizzaButton.setText("PIZZA ");
+        pizzaButton.setMaximumSize(new java.awt.Dimension(70, 32));
+        pizzaButton.setMinimumSize(new java.awt.Dimension(70, 32));
+        pizzaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pizzaButtonActionPerformed(evt);
             }
         });
 
@@ -116,17 +120,21 @@ public class homewindow extends javax.swing.JFrame {
         restaurantButtonContainer.setLayout(restaurantButtonContainerLayout);
         restaurantButtonContainerLayout.setHorizontalGroup(
             restaurantButtonContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, restaurantButtonContainerLayout.createSequentialGroup()
+            .addGroup(restaurantButtonContainerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(restaurantButtonContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pizzaButton, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+                    .addComponent(tacoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE))
                 .addContainerGap())
         );
         restaurantButtonContainerLayout.setVerticalGroup(
             restaurantButtonContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(restaurantButtonContainerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(316, Short.MAX_VALUE))
+                .addGap(9, 9, 9)
+                .addComponent(pizzaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tacoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(267, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -149,10 +157,9 @@ public class homewindow extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }                
 
     private void myprofileButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-       
       this.dispose();
       myprofilewindow newMyprofilewindow = new myprofilewindow();
       newMyprofilewindow.setVisible(true);
@@ -161,15 +168,20 @@ public class homewindow extends javax.swing.JFrame {
     }                                               
 
     private void restaurantButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-    
+
     }                                                
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-            
-      this.dispose();
-      restaurantwindow newMyprofilewindow = new restaurantwindow();
-      newMyprofilewindow.setVisible(true);
-    }                                        
+    private void tacoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    this.dispose();
+    tacorestaurantwindow newRestaurantWindow2 = new tacorestaurantwindow();
+    newRestaurantWindow2.setVisible(true);
+    }                                          
+
+    private void pizzaButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        this.dispose();
+        restaurantwindow newRestaurantWindow = new restaurantwindow();
+        newRestaurantWindow.setVisible(true);
+    }                                           
 
     /**
      * @param args the command line arguments
@@ -202,14 +214,15 @@ public class homewindow extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration                      
-    private javax.swing.JButton jButton1;
+    // Variables declaration                   
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton myprofileButton;
     private javax.swing.JPanel navigationButtonContainer;
+    private javax.swing.JButton pizzaButton;
     private javax.swing.JButton homewindowButton;
     private javax.swing.JPanel restaurantButtonContainer;
     private javax.swing.JPanel searchContainer;
     private javax.swing.JLabel searchLable;
+    private javax.swing.JButton tacoButton;
     // End of variables declaration                   
 }

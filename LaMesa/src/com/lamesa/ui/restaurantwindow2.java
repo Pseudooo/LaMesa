@@ -8,15 +8,14 @@ import com.lamesa.util.TextFormat;
 
 public class restaurantwindow2 extends javax.swing.JFrame {
 
-    /**
+	private static final long serialVersionUID = 5196846836586692359L;
+	
+	/**
      * Creates new form restuaurants
      */
     public restaurantwindow2() {
         initComponents();
     }
-
-   
-    @SuppressWarnings("unchecked")
                        
     private void initComponents() {
 

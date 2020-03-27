@@ -1,9 +1,7 @@
 package com.lamesa.net;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 import java.util.HashMap;
@@ -14,22 +12,28 @@ import com.lamesa.util.TextFormat;
 
 public class ReadThread extends Thread{
 
-	private final Client client;
 	private final Socket socket;
 	
 	private volatile HashMap<UUID, Response> responses = new HashMap<UUID, Response>();
 	
 	public ReadThread(Client client, Socket socket) throws IOException {
-		this.client = client;
 		this.socket = socket;
-		
 	}
 	
+	/**
+	 * Register a response to deal with a given DataGram that is dispatched
+	 * the response will be executed with the response payload
+	 * @param id
+	 * @param res
+	 */
 	public void registerResponse(UUID id, Response res) {
 		this.responses.put(id, res);
 		TextFormat.foutput("Registered Response for %s", id.toString());
 	}
 	
+	/**
+	 * Runnable for the Threading Superclass
+	 */
 	@Override
 	public void run() {
 		
@@ -37,7 +41,7 @@ public class ReadThread extends Thread{
 		while(run) {
 			
 			try {
-				
+				// Read the DataGram that's received and execute the appropriate response
 				int x = this.socket.getInputStream().read();
 				
 				byte[] data = new byte[x];

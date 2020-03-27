@@ -4,6 +4,8 @@ import com.lamesa.Client;
 
 public class myprofilewindow extends javax.swing.JFrame {
 	
+	private static final long serialVersionUID = -851987558288376874L;
+	
 	public static Client c;
 	
     /**
@@ -13,9 +15,6 @@ public class myprofilewindow extends javax.swing.JFrame {
         initComponents();
       
     }
-
-    
-    @SuppressWarnings("unchecked")
                      
     private void initComponents() {
 

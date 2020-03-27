@@ -177,7 +177,7 @@ public class homewindow extends javax.swing.JFrame {
 
     private void tacoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
     this.dispose();
-    restaurantwindow2 newRestaurantWindow2 = new restaurantwindow2();
+    tacorestaurantwindow newRestaurantWindow2 = new tacorestaurantwindow();
     newRestaurantWindow2.setVisible(true);
     }                                          
 

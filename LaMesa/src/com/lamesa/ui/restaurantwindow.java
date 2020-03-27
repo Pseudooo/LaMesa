@@ -9,15 +9,15 @@ import com.lamesa.util.TextFormat;
 public class restaurantwindow extends javax.swing.JFrame {
 
     /**
-     * Creates new form restuaurants
+     * Creates new form restuaurantwindow
      */
     public restaurantwindow() {
         initComponents();
     }
 
-   
+
     @SuppressWarnings("unchecked")
-                       
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -26,10 +26,11 @@ public class restaurantwindow extends javax.swing.JFrame {
         jButtonBook = new javax.swing.JButton();
         jLableResturantName = new javax.swing.JLabel();
         menuContainer = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(400, 500));
-        setPreferredSize(new java.awt.Dimension(400, 500));
+        setMinimumSize(new java.awt.Dimension(400, 500));
         setResizable(false);
         setSize(new java.awt.Dimension(400, 500));
 
@@ -55,7 +56,7 @@ public class restaurantwindow extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(homewindowButton, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                .addComponent(homewindowButton, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                 .addGap(14, 14, 14)
                 .addComponent(myprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -83,15 +84,24 @@ public class restaurantwindow extends javax.swing.JFrame {
 
         menuContainer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("pizzaMenu.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout menuContainerLayout = new javax.swing.GroupLayout(menuContainer);
         menuContainer.setLayout(menuContainerLayout);
         menuContainerLayout.setHorizontalGroup(
             menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(menuContainerLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuContainerLayout.setVerticalGroup(
             menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 373, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuContainerLayout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -105,7 +115,7 @@ public class restaurantwindow extends javax.swing.JFrame {
                     .addComponent(menuContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLableResturantName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonBook, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -113,7 +123,7 @@ public class restaurantwindow extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLableResturantName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonBook, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -123,7 +133,7 @@ public class restaurantwindow extends javax.swing.JFrame {
         );
 
         pack();
-    }                      
+    }                   
 
     private void jButtonBookActionPerformed(java.awt.event.ActionEvent evt) {                                            
     	
@@ -146,18 +156,20 @@ public class restaurantwindow extends javax.swing.JFrame {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	
-    }                                           
-
+    }    
+    
+    
+    // closes current window and opens myporfilewindow when the myproflieButton is pressed
     private void myprofileButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         this.dispose();
         myprofilewindow newMyprofilewindow = new myprofilewindow();
         newMyprofilewindow.setVisible(true);
     }                                               
-
+    // closes restaurantwindow and opens homewindow when the homewindowButton is pressed
     private void homewindowButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         this.dispose();
         homewindow newHomewindow = new homewindow();
+        
         newHomewindow.setVisible(true);
         
     }                                                
@@ -167,7 +179,7 @@ public class restaurantwindow extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-
+     
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -184,6 +196,7 @@ public class restaurantwindow extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(restaurantwindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+    
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -193,13 +206,13 @@ public class restaurantwindow extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration                   
+    // Variables declaration - do not modify                     
     private javax.swing.JButton homewindowButton;
     private javax.swing.JButton jButtonBook;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLableResturantName;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menuContainer;
     private javax.swing.JButton myprofileButton;
     // End of variables declaration                   
 }
-

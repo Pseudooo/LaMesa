@@ -38,6 +38,12 @@ public class Client {
 	
 	private byte[] key;
 	
+	/**
+	 * Create a new client instance that will automatically connect to the server
+	 * @param host - Host name
+	 * @param port - Port for host
+	 * @throws Exception Connection exceptions
+	 */
 	public Client(String host, int port) throws Exception {
 		
 		myprofilewindow.c = this;

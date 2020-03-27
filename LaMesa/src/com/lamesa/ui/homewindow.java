@@ -1,20 +1,16 @@
 package com.lamesa.ui;
 
-
-
-
-
-
 public class homewindow extends javax.swing.JFrame {
+
+	private static final long serialVersionUID = 3293682142470590958L;
 	
-    /**
+	/**
      * Creates new form homewindow
      */
     public homewindow() {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 

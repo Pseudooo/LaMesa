@@ -2,15 +2,14 @@ package com.lamesa.ui;
 
 public class tacorestaurantwindow extends javax.swing.JFrame {
 
-    /**
+	private static final long serialVersionUID = -847434889253535187L;
+	
+	/**
      * Creates new form tacorestaurantwindow
      */
     public tacorestaurantwindow() {
         initComponents();
     }
-
-  
-    @SuppressWarnings("unchecked")
                           
     private void initComponents() {
 

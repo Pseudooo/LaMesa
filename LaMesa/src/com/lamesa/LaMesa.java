@@ -7,6 +7,7 @@ public class LaMesa {
 	public static void main(String[] args) {
 		
 		try {
+			@SuppressWarnings("unused")
 			Client c = new Client("localhost", 25565);
 		} catch (Exception e) {
 			e.printStackTrace();

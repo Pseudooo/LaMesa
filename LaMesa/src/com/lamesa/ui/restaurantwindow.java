@@ -8,15 +8,15 @@ import com.lamesa.util.TextFormat;
 
 public class restaurantwindow extends javax.swing.JFrame {
 
-    /**
+	private static final long serialVersionUID = -7742689353474521115L;
+	
+	/**
      * Creates new form restuaurantwindow
      */
     public restaurantwindow() {
         initComponents();
     }
 
-
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
